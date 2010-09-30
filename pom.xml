@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <prerequisites>
+    <maven>3.0</maven>
+  </prerequisites>
+
+  <groupId>com.piece-framework</groupId>
+  <artifactId>site-parent</artifactId>
+  <version>1.0.0.qualifier</version>
+  <packaging>pom</packaging>
+
+  <name>Piece Framework Site Parent</name>
+
+  <properties>
+    <tycho-version>0.9.0</tycho-version>
+    <platform-version-name>helios</platform-version-name>
+    <eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
+  </properties>
+
+  <modules>
+    <module>piece-eclipse-update-site</module>
+  </modules>
+
+  <repositories>
+    <repository>
+      <id>helios</id>
+      <layout>p2</layout>
+      <url>${eclipse-site}</url>
+    </repository>
+  </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+        </configuration>
+      </plugin>
+    </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh</artifactId>
+        <version>1.0-beta-6</version>
+      </extension>
+    </extensions>
+  </build>
+</project>
