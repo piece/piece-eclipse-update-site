@@ -8,9 +8,6 @@
       <category name="piece_framework"/>
       <category name="testing"/>
    </feature>
-   <feature url="features/com.piece_framework.piece_ide_feature_0.4.3.jar" id="com.piece_framework.piece_ide_feature" version="0.4.3">
-      <category name="piece_framework"/>
-   </feature>
    <category-def name="makegood" label="MakeGood"/>
    <category-def name="piece_framework" label="Piece Framework"/>
    <category-def name="testing" label="Testing"/>
