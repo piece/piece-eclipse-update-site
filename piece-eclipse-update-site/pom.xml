@@ -77,7 +77,7 @@
   <distributionManagement>
     <site>
       <id>piece-eclipse</id>
-      <url>scp://piece1.piece-framework.com${site.path}</url>
+      <url>scp://piece2.piece-framework.com${site.path}</url>
     </site>
   </distributionManagement>
 </project>
